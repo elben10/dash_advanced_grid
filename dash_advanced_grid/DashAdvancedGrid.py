@@ -13,14 +13,17 @@ which is editable by the user.
 
 Keyword arguments:
 - id (string; optional): The ID used to identify this component in Dash callbacks.
-- data (dict; optional)"""
+- data (dict; optional)
+- header (list; optional)
+- rows (list; optional)
+- style (dict; optional)"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'data']
+    def __init__(self, id=Component.UNDEFINED, data=Component.UNDEFINED, header=Component.UNDEFINED, rows=Component.UNDEFINED, style=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'data', 'header', 'rows', 'style']
         self._type = 'DashAdvancedGrid'
         self._namespace = 'dash_advanced_grid'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'data']
+        self.available_properties = ['id', 'data', 'header', 'rows', 'style']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

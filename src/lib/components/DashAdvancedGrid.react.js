@@ -15,21 +15,12 @@ import 'ag-grid-community/dist/styles/ag-theme-balham.css';
  * which is editable by the user.
  */
 export default class DashAdvancedGrid extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            columnDefs: this.props.data.header,
-            rowData: this.props.data.rows
-        }
-    }
-
     render() {
-        console.log(this.props);
         return (
-            <div className="ag-theme-balham" style={{ height: '200px', width: '600px' }}>
+            <div id={this.props.id} className="ag-theme-balham" style={this.props.style}>
                 <AgGridReact
-                    columnDefs={this.state.columnDefs}
-                    rowData={this.state.rowData}>
+                    columnDefs={this.props.header}
+                    rowData={this.props.rows}>
                 </AgGridReact>
             </div>
         );
@@ -44,5 +35,8 @@ DashAdvancedGrid.propTypes = {
      */
     id: PropTypes.string,
 
-    data: PropTypes.object
+    data: PropTypes.object,
+    header: PropTypes.array,
+    rows: PropTypes.array,
+    style: PropTypes.object
 };

@@ -1,5 +1,6 @@
 import dash_advanced_grid
 import dash
+import dash.dependencies as dep
 from dash.dependencies import Input, Output
 import dash_html_components as html
 
@@ -11,16 +12,30 @@ HEADERS = [
     {"headerName": "Price", "field": "price"},
 ]
 
-ROW_DATA = [
-    {"make": "Toyota", "model": "Celica", "price": 35000},
-    {"make": "Ford", "model": "Mondeo", "price": 32000},
-    {"make": "Porsche", "model": "Boxter", "price": 72000},
-    {"make": "Porsche", "model": "Boxter", "price": 72000},
-]
+ROW_DATA = []
 
 app.layout = html.Div(
-    [dash_advanced_grid.DashAdvancedGrid(data={"header": HEADERS, "rows": ROW_DATA}),]
+    [
+        dash_advanced_grid.DashAdvancedGrid(
+            id="table",
+            header=HEADERS,
+            rows=ROW_DATA,
+            style={"height": "200px", "width": "600px"},
+        ),
+        html.Button("Add Row", id="submit"),
+    ]
 )
+
+
+@app.callback(
+    dep.Output("table", "rows"),
+    [dep.Input("submit", "n_clicks")],
+    [dep.State("table", "rows")],
+)
+def test(n_clicks, rows):
+    if n_clicks:
+        return rows + [{"make": "Toyota", "model": "Celica", "price": 35000}]
+    return []
 
 
 if __name__ == "__main__":

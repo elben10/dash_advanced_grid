@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-dashAdvancedGrid <- function(id=NULL, data=NULL) {
+dashAdvancedGrid <- function(id=NULL, data=NULL, header=NULL, rows=NULL, style=NULL) {
     
-    props <- list(id=id, data=data)
+    props <- list(id=id, data=data, header=header, rows=rows, style=style)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ dashAdvancedGrid <- function(id=NULL, data=NULL) {
         props = props,
         type = 'DashAdvancedGrid',
         namespace = 'dash_advanced_grid',
-        propNames = c('id', 'data'),
+        propNames = c('id', 'data', 'header', 'rows', 'style'),
         package = 'dashAdvancedGrid'
         )
 
