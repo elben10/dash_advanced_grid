@@ -1,0 +1,7 @@
+include dash_advanced_grid/dash_advanced_grid.min.js
+include dash_advanced_grid/dash_advanced_grid.min.js.map
+include dash_advanced_grid/metadata.json
+include dash_advanced_grid/package-info.json
+include README.md
+include LICENSE
+include package.json

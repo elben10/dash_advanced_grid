@@ -1,0 +1,15 @@
+Package: dashAdvancedGrid
+Title: Project Description
+Version: 0.0.1
+Description: Project Description
+Depends: R (>= 3.0.2)
+Imports: 
+Suggests: 
+License: MIT + file LICENSE
+URL: 
+BugReports: 
+Encoding: UTF-8
+LazyData: true
+KeepSource: true
+Author: Jakob Jul Elben [aut]
+Maintainer: Jakob Jul Elben <jakob@datamaga.com>
